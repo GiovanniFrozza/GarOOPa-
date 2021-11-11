@@ -34,12 +34,9 @@ public class Passageiro{
 	}
 
 	public void infoPontuacao(int pontuacao) {
-		if (pontuacao > 0) {
-			pontuacaoAcumulada += pontuacao;
-			qtdadeAvaliacoes++;
-		} else {
-			throw new IllegalArgumentException("Pontucao invalida !");
-		}
+		assert pontuacao < 0 : "Pontuação invalida.";
+		pontuacaoAcumulada += pontuacao;
+		qtdadeAvaliacoes++;
 	}
 
 	public int getPontuacaoAcumulada() {

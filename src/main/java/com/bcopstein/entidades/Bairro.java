@@ -39,11 +39,8 @@ public class Bairro {
     }
 
     public void alteraCustoTransporte(double novoValor){
-        if (novoValor < 0.0){
-            throw new IllegalArgumentException("Valor invalido");
-        }else{
-            this.custoTransporte = novoValor;
-        }
+        assert novoValor < 0.0 : "valor invalido";
+        this.custoTransporte = novoValor;
     }
 
     public Ponto getPontoCentral(){

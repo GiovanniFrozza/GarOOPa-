@@ -28,9 +28,7 @@ public class RepositorioBairrosImplMem implements IRepositorioBairros {
     @Override
     public Bairro recuperaPorNome(String nomeBairro) {
         Bairro bairro = bairros.get(nomeBairro);
-        if (bairro == null) {
-            throw new IllegalArgumentException("Bairro inexistente: " + nomeBairro);
-        }
+        assert !bairros.isEmpty() : "Bairro inexistente: " + nomeBairro;
         return bairro;
     }
 
